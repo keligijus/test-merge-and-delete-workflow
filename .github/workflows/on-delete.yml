@@ -4,11 +4,20 @@ on: delete
 jobs:
   delete-with-git-rm:
     runs-on: ubuntu-latest
+    env:
+      SUBJECT_GIT_BRANCH: ${{ github.event.ref }}
     steps:
       - uses: actions/checkout@v2
 
       - name: Echo current branche
         run: git branch --show-current
+      
+      - name: Echo env SUBJECT_GIT_BRANCH
+        run: echo $SUBJECT_GIT_BRANCH
+
+      - name: Echo env SUBJECT_GIT_BRANCH if not main
+        if: ${{ env.SUBJECT_GIT_BRANCH == 'main' }}
+        run: echo "Not on main branch, but on $SUBJECT_GIT_BRANCH"
 
       - name: Echo github obj
         run: |
