@@ -17,6 +17,6 @@ jobs:
     
       - name: Remove file with git commit
         run: |
-          git rm ./.env.pscale
+          git rm --ignore-unmatch ./.env.pscale
           git commit -am "remove pscale file"
           git push origin main
