@@ -1,0 +1,12 @@
+name: Delete dev env on merge to main
+on:
+  push:
+    branches:
+      - main
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Remove File
+      uses: JesseTG/rm@v1.0.2
+      with:
+        path: .env.pscale
