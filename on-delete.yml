@@ -1,0 +1,11 @@
+name: Runs on delete branch
+on: delete
+
+jobs:
+  delete-with-git-rm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Echo github obj
+        run: echo ${{ toJson(github) }}
