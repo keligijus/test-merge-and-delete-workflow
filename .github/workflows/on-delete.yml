@@ -7,6 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Echo current branche
+        run: git branch --show-current
+
       - name: Echo github obj
         run: |
           cat << OBJECT
