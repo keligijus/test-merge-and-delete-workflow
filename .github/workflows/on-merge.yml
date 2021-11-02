@@ -13,3 +13,12 @@ jobs:
         uses: JesseTG/rm@v1.0.2
         with:
           path: ./.env.pscale
+  delete-dev-another-file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Remove File 2
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: ./delete.js
