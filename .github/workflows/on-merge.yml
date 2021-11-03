@@ -19,7 +19,7 @@ jobs:
         run: |
           git rm --ignore-unmatch ./.env.pscale
           if ! git diff-index --quiet HEAD; then
-            git commit -am "remove pscale file"
+            git commit -am "remove pscale file ${{ github.event.ref }}"
             git push origin main
           fi
 
